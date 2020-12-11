@@ -1,0 +1,27 @@
+<div class="container">
+    <h2 class="display-4 text-center">All Users</h2>
+    <div class="text-right"><a routerLink="/user-add" class="btn btn-primary mb-1">Add User</a></div>
+    <table class="table table-striped table-inverse border-primary rounded">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Sr.No.</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor='let user of userList; let i = index'>
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.username }}</td>
+                <td>
+                    <a [routerLink]="[ '/user-details', user.id ]">View Details</a>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
